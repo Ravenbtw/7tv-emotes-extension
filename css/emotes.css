@@ -25,7 +25,7 @@ body {
 }
 
 .emotes {
-    height: calc(100vh - 161px);
+    height: calc(100vh - 80px);
     overflow: scroll;
 }
 
@@ -38,7 +38,7 @@ body {
     max-width: 100%;
 }
 
-.header, .footer {
+.header {
     height: 80px;
 }
 
@@ -49,19 +49,10 @@ body {
     line-height: 80px;
 }
 
-.header, .footer, .download {
+.header {
     border-color: var(--text-color)!important;
 }
 
-.footer {
-    background-color: var(--background-color);
-    height: 80px;
-}
-
-.download {
-    margin: 21px;
-}
-
-h1, p, .download {
+h1, p {
     color: var(--text-color)!important;
 }
