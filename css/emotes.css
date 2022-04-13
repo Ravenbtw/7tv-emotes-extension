@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  background-color: #222;
+  background-color: #303030;
   text-align: center;
   font-family: 'Roboto', sans-serif;
   color: white;
@@ -34,10 +34,9 @@ a {
 }
 
 .header {
-  background-color: #333;
+  background-color: #1d1d1d;
   display: flex;
   justify-content: space-evenly;
-  box-shadow: 0 0px 3px black;
 }
 
 .header img {
@@ -45,15 +44,19 @@ a {
   padding: 10px;
 }
 
-.content {
-  padding-top: 20px;
-  overflow: scroll;
-  height: calc(100% - 120px);
+.message {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .emotes {
   display: flex;
   flex-wrap: wrap;
+  overflow: scroll;
+  height: calc(100% - 110px);
+  padding-top: 10px;
 }
 
 .emote {
