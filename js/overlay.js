@@ -74,10 +74,6 @@ const listenToEvents = async (id) => {
   }
 };
 
-getEmotes('729353699');
-
-listenToEvents('729353699');
-
 window.Twitch.ext.onAuthorized(async ({ channelId }) => {
   getEmotes(channelId);
 
