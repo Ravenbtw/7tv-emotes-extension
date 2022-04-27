@@ -1,4 +1,5 @@
 const container = document.querySelector('.container');
+const emoteContainer = document.querySelector('.emote-container');
 const eventAction = document.querySelector('.event-action');
 const emoteImage = document.querySelector('.emote-image');
 const emoteName = document.querySelector('.emote-name');
@@ -8,19 +9,31 @@ const emoteImages = {};
 let eventTimeout;
 let imageTimeout;
 
-const displayAction = (add, name, image, id) => {
+let queue = [];
+
+const displayAction = () => {
+  if (!queue[0]) return;
+
+  const { add, name, image, id } = queue[0];
+
+  queue.shift();
+
   clearTimeout(eventTimeout);
   clearTimeout(imageTimeout);
 
+  container.style.pointerEvents = 'auto';
   container.style.opacity = 1;
 
+  emoteContainer.href = `https://7tv.app/emotes/${id}`;
+
   eventTimeout = setTimeout(() => {
+    container.style.pointerEvents = 'none';
     container.style.opacity = 0;
 
     imageTimeout = setTimeout(() => {
       emoteImage.src = '';
     }, 1000);
-  }, 1000 * 5);
+  }, 1000 * 3);
 
   switch (add) {
     case true:
@@ -62,17 +75,19 @@ const listenToEvents = async (id) => {
     source.addEventListener('update', ({ data }) => {
       const { action, name, emote, emote_id } = JSON.parse(data);
 
-      displayAction(
-        action === 'ADD',
+      queue.push({
+        add: action === 'ADD',
         name,
-        action === 'ADD' ? emote.urls[3][1] : null,
-        emote_id
-      );
+        image: action === 'ADD' ? emote.urls[3][1] : null,
+        id: emote_id,
+      });
     });
   } catch (error) {
     console.log(error);
   }
 };
+
+setInterval(displayAction, 1000 * 5);
 
 window.Twitch.ext.onAuthorized(async ({ channelId }) => {
   getEmotes(channelId);

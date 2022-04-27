@@ -21,6 +21,7 @@ body {
   color: white;
   overflow: hidden;
   height: 100%;
+  user-select: none;
 }
 
 body,

@@ -4,6 +4,7 @@ body {
   font-family: 'Roboto', sans-serif;
   color: white;
   text-align: center;
+  user-select: none;
 }
 
 body,
@@ -22,13 +23,14 @@ a {
   top: 50%;
   transform: translateY(-50%);
   width: 250px;
-  height: 250px;
+  height: 350px;
   background-color: #303030;
   box-shadow: 0 0px 3px black;
   display: flex;
   flex-direction: column;
   opacity: 0;
   transition: opacity 1s;
+  pointer-events: none;
 }
 
 .header {
@@ -58,5 +60,6 @@ a {
 }
 
 .emote-image {
-  width: 80px;
+  width: 100px;
+  margin-bottom: 5px;
 }
