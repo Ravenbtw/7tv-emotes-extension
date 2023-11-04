@@ -11,8 +11,8 @@ body:hover {
   position: absolute;
   left: 10px;
   top: 50%;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   padding: 10px;
   box-sizing: border-box;
   border-radius: 10px;
@@ -22,7 +22,7 @@ body:hover {
 
 .extension-container {
   position: absolute;
-  left: 70px;
+  left: 80px;
   top: 50%;
   transform: translateY(-50%);
   width: 320px;
