@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  margin: 0;
+  user-select: none;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.extension-container {
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  background-color: #181d1f;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(21, 25, 26, 0.75);
+}
+
+.header-logo {
+  height: 40px;
+  padding: 20px;
+}
+
+.emotes {
+  padding: 10px;
+  display: inline-grid;
+  grid-template-columns: 100fr 100fr 100fr;
+  gap: 10px;
+}
+
+.emote {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  background-color: #141819;
+  overflow: hidden;
+}
+
+.emote-image-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.emote-image {
+  padding: 10px;
+  box-sizing: border-box;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.emote-name {
+  margin: 0;
+  padding: 0 10px 10px 10px;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

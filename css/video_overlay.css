@@ -1,0 +1,35 @@
+body {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+body:hover {
+  opacity: 1;
+}
+
+.extension-toggle {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: #181d1f;
+  cursor: pointer;
+}
+
+.extension-container {
+  position: absolute;
+  left: 70px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+  height: 500px;
+  max-height: 70%;
+  border-radius: 10px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
