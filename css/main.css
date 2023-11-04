@@ -66,6 +66,7 @@ body {
 .emote-name {
   margin: 0;
   padding: 0 10px 10px 10px;
+  font-size: 12px;
   text-align: center;
   color: #fff;
   overflow: hidden;
